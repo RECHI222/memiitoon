@@ -1,13 +1,19 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="ja">
 
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap" rel="stylesheet">
+  <title>MemiiToOn</title>
+</head>
 
 <nav class="navbar navbar-expand-sm" style="background-color: #BA64E8;">
   <div class="container-fluid">
-    <a class="navbar-brand" style="font-family: 'Yuji Mai', serif;">MemiiToOn</a>
+    <a href="{{ url('/') }}" class="navbar-brand" style="font-family: 'Yuji Mai', serif;">MemiiToOn</a>
 
 
     <ul class="navbar-nav">
@@ -35,5 +41,5 @@
         </div>
       </li>
     </ul>
-
-</nav>
+  </nav>
+</html>

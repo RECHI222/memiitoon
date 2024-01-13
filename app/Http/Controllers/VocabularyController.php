@@ -12,12 +12,9 @@ class VocabularyController extends Controller
 {
     public function index(Request $request)
     {
-
     
         $vocabularies = Auth::user()->vocabularies()->sortable()->paginate(10);
       
-       
-
         return view('vocabularies.index', compact('vocabularies'));
     }
 
@@ -25,7 +22,7 @@ class VocabularyController extends Controller
     {
        
         $titles = Title::all();
-       $users = Auth::id();
+        $users = Auth::id();
        
         return view('vocabularies.create', compact('titles','users'));
 

@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="ja">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <title>Document</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap" rel="stylesheet">
-</head>
 @component('components.header')
 @endcomponent
 
 <body>
-
 <div class="container">
   
   <div>
@@ -24,6 +12,7 @@
     <a href="{{ route('titles.index') }}">&lt; back</a>
   </div>
 
+{{-- エラーの際のアラート表示 --}}
   @if($errors->any())
   <div class="alert alert-danger">
     <ul>
@@ -33,6 +22,8 @@
     </ul>
   </div>
   @endif
+
+  {{-- titleを作る要素 --}}
   <div class="card text-left">
   <form action="{{ route('titles.store') }}" method="POST">
     @csrf
@@ -56,4 +47,3 @@
   </div>
 </body>
 
-</html>

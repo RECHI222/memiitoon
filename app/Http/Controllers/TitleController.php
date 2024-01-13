@@ -44,9 +44,9 @@ class TitleController extends Controller
         $title->user_id = Auth::id();
        
         
-        $request->validate([
-            'time' => 'numeric|min:0|max:10'
-        ]);
+        // $request->validate([
+        //     'time' => 'numeric|min:0|max:10'
+        // ]);
         $title->save();
         return redirect()->route('titles.index')->with('flash_message', 'complete to create title');
         
@@ -64,9 +64,9 @@ class TitleController extends Controller
         $title->time = $request->input('time');
         $title->color = $request->input('color');
         $title->user_id = Auth::id();
-        $request->validate([
-            'time' => 'numeric|min:0|max:10'
-        ]);
+        // $request->validate([
+        //     'time' => 'numeric|min:0|max:10'
+        // ]);
 
         $title->update();
 
