@@ -22,19 +22,19 @@
   <div class="accordion" id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: {{ $title->color }}; ">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ $title->name }}" aria-expanded="true" aria-controls="collapseOne" style="background-color: {{ $title->color }}; ">
           {{ $title->name }}
         </button>
       </h2>
 {{-- titleがあったら表示する中身の部分 --}} 
-      <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div id="{{ $title->name }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
         <div class="accordion-body">
          
             <p><strong>ID: </strong>{{ $title->id }}</p>
             <p><strong>TIME: </strong>{{ $title->time }}</p>
             <span><strong>COLOR:</strong></span>
             <p style="background-color: {{ $title->color }}; width: 75px;">{{ $title->color }}</p>
-            <form action="{{ route('titles.destroy', $title->id) }}" method="POST">
+            <form action="{{ route('titles.destroy', $title->id) }}" method="POST" onsubmit="return confirm('本当に削除しますか？')">
               <a class="btn btn-outline-secondary" type="button" href="{{ route('titles.show', $title->id) }}">GO Test</a>
               <a class="btn btn-outline-secondary" type="button" href="{{ route('titles.edit', $title->id) }}">Edit</a>
               @csrf
