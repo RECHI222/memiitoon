@@ -39,7 +39,14 @@
           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
             @csrf
           </form>
-
+          <a class="dropdown-item" href="{{ route('user.destroy') }}" onclick="event.preventDefault();
+      document.getElementById('delete-form').submit();">
+            削除
+          </a>
+          <form id="delete-form" action="{{ route('user.destroy') }}" method="POST" class="d-none">
+            @csrf
+            @method('DELETE')
+          </form>
         </div>
       </li>
     </ul>

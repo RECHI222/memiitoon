@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TitleController;
 use App\Http\Controllers\VocabularyController;
-
+use App\Http\Controllers\Auth\RegisteredUserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,4 +43,5 @@ Route::post('/titles', [TitleController::class, 'store'])->middleware(['auth', '
 
 Route::get('/titles/{title}', [TitleController::class, 'show'])->middleware(['auth', 'verified'])->name('titles.show');
 */
-Route::resource('vocabularies', VocabularyController::class)->middleware(['auth', 'verified']);;
+Route::resource('vocabularies', VocabularyController::class)->middleware(['auth', 'verified']);
+Route::delete('/user', [RegisteredUserController::class,'destroy'])->middleware(['auth'])->name('user.destroy');
