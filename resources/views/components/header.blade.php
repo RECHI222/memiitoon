@@ -33,20 +33,22 @@
 
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-      document.getElementById('logout-form').submit();">
+            document.getElementById('logout-form').submit();">
             ログアウト
           </a>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none" onsubmit="return confirm('本当に削除しますか？')">
             @csrf
           </form>
-          <a class="dropdown-item" href="{{ route('user.destroy') }}" onclick="event.preventDefault();
-      document.getElementById('delete-form').submit();">
+{{-- 確認ボタンができてないため一旦中止--}}
+          <!-- <a class="dropdown-item" href="{{ route('user.destroy') }}" onclick="event.preventDefault();
+            document.getElementById('delete-form').submit();
+            confirm('本当に削除しますか？');">
             削除
           </a>
-          <form id="delete-form" action="{{ route('user.destroy') }}" method="POST" class="d-none">
+          <form id="delete-form" action="{{ route('user.destroy') }}" method="POST" class="d-none" onsubmit="return confirm('本当に削除しますか？')">
             @csrf
-            @method('DELETE')
-          </form>
+            @method('DELETE') -->
+          <!-- </form> -->
         </div>
       </li>
     </ul>
