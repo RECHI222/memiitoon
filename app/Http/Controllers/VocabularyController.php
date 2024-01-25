@@ -13,9 +13,10 @@ class VocabularyController extends Controller
     public function index(Request $request)
     {
         $titles = Title::select('name','id')->get();
+        $vocab = Vocabulary::paginate(10);
         $vocabularies = Auth::user()->vocabularies()->sortable()->paginate(10);
       
-        return view('vocabularies.index', compact('vocabularies','titles'));
+        return view('vocabularies.index', compact('vocabularies','titles', 'vocab'));
     }
 
     public function create() 

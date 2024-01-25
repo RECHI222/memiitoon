@@ -24,9 +24,11 @@
       START!!</h1>
     </div>
   </div>
+  <div>
   <button onclick="startInterval()" id="startBtn">start</button>
   <button onclick="stopInterval()" id="stopBtn">stop</button>
   <button onclick="resetAction()" id="resetBtn">reset</button>
+  </div>
 
 </div>
 <style>
